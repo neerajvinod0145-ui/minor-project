@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neeraj Vinod | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080817;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111b30;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #62d5ff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #62d5ff;
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 10%;
+    background: radial-gradient(circle at 80% 50%, #24205c, transparent 35%), #080817;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h3 {
+    color: #62d5ff;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #62d5ff;
+    text-shadow: 0 0 20px #238cff;
+}
+
+.hero p {
+    color: #b9bad0;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.typing {
+    color: #bd82ff;
+    font-size: 22px;
+    margin-bottom: 20px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px #bd82ff; }
+    to { text-shadow: 0 0 20px #bd82ff; }
+}
+
+.profile {
+    width: 260px;
+    height: 260px;
+    min-width: 260px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #62d5ff, #a35cff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 0 35px #6255ff;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    margin-top: 25px;
+    background: linear-gradient(90deg,#62d5ff,#a35cff);
+    color: #080817;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #62d5ff;
+}
+
+section {
+    padding: 85px 10%;
+}
+
+.title {
+    text-align: center;
+    color: #62d5ff;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+.about-card {
+    background: #14142a;
+    border: 1px solid #34345d;
+    border-radius: 15px;
+    padding: 35px;
+    line-height: 1.9;
+    color: #c5c5d8;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.details div {
+    background: #20203e;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.details h3 {
+    color: #62d5ff;
+    margin-bottom: 8px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill {
+    padding: 18px 28px;
+    background: #17172e;
+    border: 1px solid #5750a1;
+    color: #62d5ff;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.skill:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 18px #6255ff;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+}
+
+.project-card {
+    padding: 28px;
+    background: #17172e;
+    border: 1px solid #38385e;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #62d5ff;
+    box-shadow: 0 0 20px #29296b;
+}
+
+.project-card h3 {
+    color: #62d5ff;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: #b9bad0;
+    line-height: 1.8;
+}
+
+.contact {
+    text-align: center;
+    background: #14142a;
+}
+
+.contact p {
+    color: #b9bad0;
+    line-height: 1.8;
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    color: #9999b5;
+    background: #080817;
+}
+
+@media(max-width: 750px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 12px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 65px 7%;
+    }
+
+    .profile {
+        width: 190px;
+        height: 190px;
+        min-width: 190px;
+        font-size: 55px;
+    }
+
+    .details, .projects {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 60px 7%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">NEERAJ.</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME SECTION -->
+<div class="hero" id="home">
+
+    <div class="hero-content">
+        <h3>HELLO, I'M</h3>
+
+        <h1>Neeraj <span>Vinod</span></h1>
+
+        <div class="typing">
+            Computer Science Student
+        </div>
+
+        <p>
+            Welcome to my personal portfolio!
+            I am passionate about technology,
+            programming, web development and cybersecurity.
+            I love exploring new ideas and transforming
+            them into meaningful projects.
+        </p>
+
+        <a href="#about" class="btn">
+            Explore My Profile
+        </a>
+    </div>
+
+    <div class="profile">
+        NV
+    </div>
+
+</div>
+
+<!-- ABOUT SECTION -->
+<section id="about">
+
+    <h2 class="title">About Me</h2>
+
+    <div class="about-card">
+
+        <p>
+            I am Neeraj Vinod, a Computer Science and
+            Engineering student who is enthusiastic
+            about technology and innovation.
+
+            I enjoy learning programming languages,
+            developing websites and understanding
+            computer systems.
+
+            My goal is to become a skilled professional
+            in the technology field, with a special
+            interest in cybersecurity. I believe in
+            continuous learning, creativity and
+            improving my technical abilities.
+        </p>
+
+        <div class="details">
+
+            <div>
+                <h3>Name</h3>
+                <p>Neeraj Vinod</p>
+            </div>
+
+            <div>
+                <h3>Department</h3>
+                <p>Computer Science and Engineering</p>
+            </div>
+
+            <div>
+                <h3>Register Number</h3>
+                <p>JCE25CS042</p>
+            </div>
+
+            <div>
+                <h3>Career Interest</h3>
+                <p>Cybersecurity</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS SECTION -->
+<section id="skills">
+
+    <h2 class="title">My Skills & Interests</h2>
+
+    <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Python</div>
+        <div class="skill">Git & GitHub</div>
+        <div class="skill">Web Development</div>
+        <div class="skill">Programming</div>
+        <div class="skill">Cybersecurity</div>
+    </div>
+
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects">
+
+    <h2 class="title">My Projects</h2>
+
+    <div class="projects">
+
+        <div class="project-card">
+            <h3>01. Bike and Vehicle Sharing System</h3>
+            <p>
+                A web-based vehicle sharing platform
+                designed to connect vehicle owners
+                with people looking to rent bikes
+                and cars conveniently.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>02. Personal Portfolio Website</h3>
+            <p>
+                A responsive personal website built
+                using HTML and CSS to showcase
+                my profile, skills, interests
+                and academic projects.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact" id="contact">
+
+    <h2 class="title">Let's Connect</h2>
+
+    <p>
+        Thank you for visiting my portfolio!
+        <br>
+        Keep learning. Keep exploring.
+        Keep building.
+    </p>
+
+    <a href="https://github.com/" target="_blank"
+       class="btn">
+        Visit My GitHub
+    </a>
+
+</section>
+
+<footer>
+    <p>© 2026 Neeraj Vinod</p>
+    <p>Designed & Developed with Passion.</p>
+</footer>
+
+</body>
+</html>
